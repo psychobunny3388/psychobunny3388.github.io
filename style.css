@@ -12,31 +12,17 @@ h1 {
     2px 2px 1px rgb(5, 193, 250);
     text-align: center;
 }
-h2{
-  font-size: 50px;
-  text-shadow:
-  1px 1px 1px,
-  2px 2px 1px;
-  text-align: right;
+.moneybutton
+{
+width: 250px;
+height: 250px;
+cursor: pointer;
 }
-h3{
-  font-size: 40px;
-  text-shadow:
-  1px 1px 1px,
-  2px 2px 1px;
-  text-align:right;
+.moneybutton:hover
+{
+ transform: scale(1.05)
 }
-h4{
-  font-size: 50px;
-  text-shadow:
-  1px 1px 1px,
-  2px 2px 1px;
-  text-align:left;
-}
-button{
-  w=250px
-  h=250px
-}
+
 
 
 
