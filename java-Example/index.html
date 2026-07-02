@@ -67,35 +67,45 @@
     const guessSubmit=document.querySelector(".guessSubmit");
     const guessField=document.querySelector(".guessField");
     let guessCount=1;
+    let resetButton;
+
     guessSubmit.addEventListener("click", checkGuess);
     function checkGuess()
     {
       const userGuess=Number(guessField.value);
       if (guessCount==1)
     {
-      guesses.textContext="Previous guesses: ";
+      guesses.textContent="Previous guesses: ";
     }
-    guesses.textContext+=userGuess+" ";
+    guesses.textContent+=userGuess+" ";
     if(userGuess==randomNumber)
     {
-      lastResult.textContext="Congratulations! If you didn't get it first try, you are not better than Ben Belferder";
+      lastResult.textContent="Congratulations! If you didn't get it first try, you are not better than Ben Belferder";
       lastResult.style.backgroundColor="green";
-      lowOrHi.textContext="";
+      lowOrHi.textContent="";
       setGameOver();
 
     }
+    else if (guessCount==10)
+    {
+      lastResult.textContent= "Game Over!";
+      lastResult.style.backgroundColor= "red";
+
+      lowOrHi.textContent="";
+      setGameOver();
+    }
     else
     {
-      lastResult.textContext="Wrong";
+      lastResult.textContent="Wrong";
       lastResult.style.backgroundColor="red";
 
       if(userGuess<randomNumber)
     {
-      lowOrHi.textCintext="Last Guess was too high";
+      lowOrHi.textContent="Last Guess was too low";
     }
-    if(userGuess>randomNumber)
+  else
     {
-      lowOrHi.textContext="Last Guess was too low";
+      lowOrHi.textContent="Last Guess was too high";
     }
     }
     guessCount++;
@@ -106,20 +116,20 @@
     }
     function setGameOver()
     {
-      guessFielf.disabled=true;
+      guessField.disabled=true;
       guessSubmit.disabled=true;
       resetButton=document.createElement("button");
-      resetButton.textContext="Start new game";
+      resetButton.textContent="Start new game";
       document.body.appendChild(resetButton);
       resetButton.addEventListener("click", resetGame);
     }
     function resetGame()
     {
       guessCount=1;
-      const resetParas=document.querySelectorAll(".resultParas p")
+      const resetParas=document.querySelectorAll(".resultParas p");
       for (const resetPara of resetParas)
     {
-      resetPara.textContext="";
+      resetPara.textContent="";
     }
     resetButton.parentNode.removeChild(resetButton);
     guessField.disabled=false;
