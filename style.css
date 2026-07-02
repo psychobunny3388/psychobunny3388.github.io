@@ -1,7 +1,7 @@
 body{
       background-image: url('https://cdn.pixabay.com/photo/2025/04/02/18/48/background-9509852_1280.jpg');
       background-size: cover;
-      background-repeat: no repeat;
+      background-repeat: no-repeat;
       background-position: center;
       background-attachment: fixed;
     }
@@ -12,15 +12,21 @@ h1 {
     2px 2px 1px rgb(5, 193, 250);
     text-align: center;
 }
+p
+{
+  font-size:30px;
+  color:white;
+}
 .moneybutton
 {
 width: 250px;
 height: 250px;
 cursor: pointer;
+transition:transform 0.2s;
 }
 .moneybutton:hover
 {
- transform: scale(1.05)
+ transform: scale(1.05);
 }
 
 
